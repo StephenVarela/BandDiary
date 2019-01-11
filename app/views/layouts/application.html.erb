@@ -11,6 +11,9 @@
 
   <header>
     <h1>BandDiary</h1>
+    <% if session[:user_id] %>
+       <%= link_to "Log out", session_path("current"), :method => :delete %>
+    <% end %>
   </header>
   <body>
     <%= yield %>
